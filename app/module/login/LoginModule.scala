@@ -42,9 +42,8 @@ object LoginModule {
 			
 			builder += "SNS" -> sns_lst.result
 		
-			println(builder.result)
 			_data_connection.getCollection("users") += builder.result
-
+			
 			Json.toJson(Map("status" -> toJson("ok"), "result" -> toJson(Map("user_id" -> user_id, "auth_token" -> auth_token))))
 			
 		} else {

@@ -8,6 +8,10 @@
 # Login 
 POST	/auth/authWithSNS							controllers.loginController.authWithThird
 
+# Profile
+POST	/profile/updateUserProfile					controllers.profileController.updateUserProfile
+POST	/profile/queryUserProfile					controllers.profileController.queryUserProfile
+
 # Files
 GET		/file/downloadFile/*name					controllers.fileController.downloadFile(name)
 POST	/file/uploadFile							controllers.fileController.uploadFile
