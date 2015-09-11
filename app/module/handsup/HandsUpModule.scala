@@ -20,8 +20,8 @@ object HandsUpModule {
 		 * query my event
 		 */
 		var reVal : List[JsValue] = Nil
-		((from db() in "handsUp" where ("founder_id" $eq user_id) select (x => x)).toList :: 
-			(from db() in "handsUp" where ("founder_id" $ne user_id) select (x => x)).toList).flatMap { x => x.map { iter =>
+		((from db() in "events" where ("founder_id" $eq user_id) select (x => x)).toList :: 
+			(from db() in "events" where ("founder_id" $ne user_id) select (x => x)).toList).flatMap { x => x.map { iter =>
 			
 			var tmp : Map[String, JsValue] = Map.empty
 			tmp += "event_id" -> toJson(iter.asInstanceOf[MongoDBObject].getAs[String]("event_id").get)
@@ -53,7 +53,7 @@ object HandsUpModule {
 		builder += "date" -> date
 		builder += "founder_id" -> user_id
 	
-		_data_connection.getCollection("handsUp") += builder.result
+		_data_connection.getCollection("events") += builder.result
 		queryHandsUpEvents(data)
 	}
 }
