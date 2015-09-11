@@ -12,6 +12,10 @@ POST	/auth/authWithSNS							controllers.loginController.authWithThird
 POST	/profile/updateUserProfile					controllers.profileController.updateUserProfile
 POST	/profile/queryUserProfile					controllers.profileController.queryUserProfile
 
+# HandsUp
+POST	/handsup/queryHandsUpEvents					controllers.handsUpController.queryHandsUpEvents					
+POST	/handsup/postHandsUpEvent					controllers.handsUpController.postHandsUpEvent
+
 # Files
 GET		/file/downloadFile/*name					controllers.fileController.downloadFile(name)
 POST	/file/uploadFile							controllers.fileController.uploadFile
