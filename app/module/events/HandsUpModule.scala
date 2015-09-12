@@ -1,4 +1,4 @@
-package module.handsup
+package module.events
 
 import play.api.libs.json.Json
 import play.api.libs.json.Json.{toJson}
@@ -52,6 +52,11 @@ object HandsUpModule {
 		builder += "detail" -> title
 		builder += "date" -> date
 		builder += "founder_id" -> user_id
+		
+		val catchUp_lst = MongoDBList.newBuilder
+		catchUp_lst += user_id
+		
+		builder += "catchs" -> catchUp_lst.result
 	
 		_data_connection.getCollection("events") += builder.result
 		queryHandsUpEvents(data)

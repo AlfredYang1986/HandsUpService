@@ -16,6 +16,10 @@ POST	/profile/queryUserProfile					controllers.profileController.queryUserProfil
 POST	/handsup/queryHandsUpEvents					controllers.handsUpController.queryHandsUpEvents					
 POST	/handsup/postHandsUpEvent					controllers.handsUpController.postHandsUpEvent
 
+# CatchUp
+POST	/catchup/queryCatchUpEvents					controllers.catchUpController.queryCatchUpEvents
+POST	/catchup/catchUpEvent						controllers.catchUpController.catchUpEvent
+
 # Files
 GET		/file/downloadFile/*name					controllers.fileController.downloadFile(name)
 POST	/file/uploadFile							controllers.fileController.uploadFile

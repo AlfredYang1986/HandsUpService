@@ -1,7 +1,7 @@
 package controllers
 
 import play.api.mvc._
-import module.handsup.HandsUpModule
+import module.events.HandsUpModule
 
 import controllers.common.requestArgsQuery._
 
